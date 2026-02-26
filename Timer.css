@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    /* Largeur/hauteur incluent padding + bordure */
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url('/Timer/5825705.jpg') no-repeat center center fixed;
+    /* Fond d'écran */
+    background-size: cover;
+    /* Couvre tout l'écran */
+}
+
+
+/* (fond de l'écran) */
+.welcome {
+    width: 100%;
+    /* Prend largeur*/
+    min-height: 100vh;
+    /* Hauteur minimale  */
+    color:black;
+    /* Texte blanc */
+    position: relative;
+    /* Sert de conteneur de référence pour le positionnement absolu */
+
+
+}
+
+/* Conteneur centré qui contient l'horloge */
+.container {
+    height: 180px;
+    /* Hauteur fixe de la boîte */
+    width: 800px;
+    /* Largeur fixe (assez large pour l'horloge) */
+
+    position: absolute;
+    /* Positionnement par rapport à .welcome*/
+    top: 50%;
+    /* Centre verticalement */
+    left: 50%;
+    /* Centre horizontalement */
+
+    /* Décalage exact pour centrer parfaitement */
+    transform: translate(-50%, -50%);
+}
+
+/* L'horloge */
+.clock {
+    height: 100%;
+    /* Prend toute la hauteur du .container */
+    width: 100%;
+    /* Prend toute la largeur du .container */
+
+    border-radius: 10px;
+    /* Coins arrondis */
+
+
+    /* Disposition flex pour centrer les chiffres facilement */
+    display: flex;
+    align-items: center;
+    /* Centre verticalement les enfants */
+    justify-content: center;
+    /* Centre horizontalement les enfants */
+
+
+}
+
+/* Style commun à tous les <span> de l'horloge (heures, min, sec) */
+.clock span {
+    font-size: 80px;
+    /* Chiffres très gros */
+    width: 110px;
+    /* Largeur fixe pour chaque bloc de chiffres */
+    text-align: center;
+    /* Centre les chiffres dans leur espace */
+    display: inline-block;
+    /* Permet de leur donner une largeur fixe */
+    position: relative;
+    transition: color 0.3s ease;
+    font-weight: 500;
+    
+}
+
+.clock a {
+    font-size: 80px;
+    /* Chiffres très gros */
+    width: 50px;
+    /* Largeur fixe pour chaque bloc de chiffres */
+    text-align: center;
+    /* Centre les chiffres dans leur espace */
+}
+
+.clock m {
+    font-size: 50px;
+    /* Chiffres très gros */
+    width: 110px;
+    /* Largeur fixe pour chaque bloc de chiffres */
+    padding-top: 60px;
+    padding-left: 20px;
+    font-weight: 700;
+}
+
+/* Petit texte "HOURS", "MINS", "SEC" sous chaque groupe de chiffres */
+.clock span::after {
+    font-size: 16px;
+    /* Texte beaucoup plus petit */
+    position: absolute;
+    bottom: -5px;
+    /* Juste en dessous des gros chiffres */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centre parfaitement le texte */
+}
+
+.date {
+    font-size: 20px;
+    padding-left: 20px;
+    font-weight: bold;
+
+}
+
+/* Texte spécifique sous les heures */
+#hours::after {
+    content: 'HRS';
+}
+
+/* Texte sous les minutes */
+#minutes::after {
+    content: 'MINS';
+}
+
+/* Texte sous les secondes */
+#seconds::after {
+    content: 'SEC';
+}
+
+.personal-touch {
+    font-size: 15px;
+    bottom: -900px;
+    position: relative;
+    font-weight: bold;
+}

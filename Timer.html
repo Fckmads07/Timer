@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon"  class="icon" href="./f813828474e1252f9784d7bb17917079.jpg" >
+    <title>Timer</title>
+
+    <!--Connect to the CSS file Timmer.css -->
+    <link rel="stylesheet" href="Timer.css">
+
+    <!--Connect to Google Fonts for styling and loading delay -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Load Poppins font from Google Fonts with many weights & italic variants -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- MEtttre la class welcome pour modifier dans le css -->
+    <div class="welcome">
+        <p class="personal-touch">Clock by Madhav</p> <!-- Personal: Add your name or quote -->
+        <!--Creation d'un container-->
+        <div class="container">
+         
+            <!--Creation du timer / clock-->
+            <div class="clock">
+                
+                <!--Hours : minutes : seconds ( layout)-->
+                <span id="hours">00</span> 
+                <a>:</a>
+                <span id="minutes">00</span> 
+                <a>:</a>
+                <span id="seconds">00</span>
+
+
+                <!-- New: AM/PM indicator -->
+                <m id="ampm"></m> 
+                <!-- New: Date display -->
+                <div class="date" id="date">   Date: Loading...</div> 
+                
+
+            </div>
+        </div>
+
+      
+    </div>
+
+    <script src="Timer.js"></script>
+    
+</body>
+</html>

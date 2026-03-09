@@ -14,66 +14,55 @@ body {
     /* Couvre tout l'écran */
 }
 
-
-/* (fond de l'écran) */
-.welcome {
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    /* Prend largeur*/
-    min-height: 100vh;
-    /* Hauteur minimale  */
-    color:black;
-    /* Texte blanc */
-    position: relative;
-    /* Sert de conteneur de référence pour le positionnement absolu */
-
-
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
 }
 
-/* Conteneur centré qui contient l'horloge */
+
+.welcome {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .container {
-    height: 180px;
-    /* Hauteur fixe de la boîte */
-    width: 800px;
-    /* Largeur fixe (assez large pour l'horloge) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    position: absolute;
-    /* Positionnement par rapport à .welcome*/
-    top: 50%;
-    /* Centre verticalement */
-    left: 50%;
-    /* Centre horizontalement */
+    width: 90%;
+    max-width: 800px;
+    height: auto;
 
-    /* Décalage exact pour centrer parfaitement */
-    transform: translate(-50%, -50%);
+    margin: auto;
+    padding: 20px;
 }
 
 /* L'horloge */
 .clock {
-    height: 100%;
-    /* Prend toute la hauteur du .container */
-    width: 100%;
-    /* Prend toute la largeur du .container */
-
-    border-radius: 10px;
-    /* Coins arrondis */
-
-
-    /* Disposition flex pour centrer les chiffres facilement */
     display: flex;
-    align-items: center;
-    /* Centre verticalement les enfants */
+
     justify-content: center;
-    /* Centre horizontalement les enfants */
-
-
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 /* Style commun à tous les <span> de l'horloge (heures, min, sec) */
 .clock span {
-    font-size: 80px;
-    /* Chiffres très gros */
-    width: 110px;
-    /* Largeur fixe pour chaque bloc de chiffres */
+    font-size: clamp(40px, 8vw, 80px);
+    min-width: 70px;
+    text-align: center;
+    font-weight: 500;
     text-align: center;
     /* Centre les chiffres dans leur espace */
     display: inline-block;
@@ -81,7 +70,13 @@ body {
     position: relative;
     transition: color 0.3s ease;
     font-weight: 500;
-    
+
+
+}
+
+.clock span:hover {
+    color: #00e0ff;
+    transform: scale(1.1);
 }
 
 .clock a {
@@ -119,6 +114,8 @@ body {
     font-size: 20px;
     padding-left: 20px;
     font-weight: bold;
+    margin-top: 15px;
+    letter-spacing: 2px;
 
 }
 
@@ -139,7 +136,28 @@ body {
 
 .personal-touch {
     font-size: 15px;
-    bottom: -900px;
+
     position: relative;
     font-weight: bold;
+
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 100%;
+    }
+
+    .clock span {
+        font-size: 45px;
+    }
+
+    .date {
+        font-size: 16px;
+    }
+
+    .clock m {
+        font-size: 30px;
+    }
+
 }
